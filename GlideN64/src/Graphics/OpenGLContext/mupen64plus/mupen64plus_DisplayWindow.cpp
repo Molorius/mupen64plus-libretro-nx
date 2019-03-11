@@ -65,12 +65,12 @@ bool DisplayWindowMupen64plus::_start()
 {
 	_setAttributes();
 
-	m_bFullscreen = 1;
+	m_bFullscreen = false;
 	m_screenWidth = get_retro_screen_width();
 	m_screenHeight = get_retro_screen_height();
 	_getDisplaySize();
 	_setBufferSize();
-
+	
 	LOG(LOG_VERBOSE, "[gles2GlideN64]: Create setting videomode %dx%d\n", m_screenWidth, m_screenHeight);
 
 
@@ -97,11 +97,10 @@ void DisplayWindowMupen64plus::_saveBufferContent(graphics::ObjectHandle /*_fbo*
 bool DisplayWindowMupen64plus::_resizeWindow()
 {
 	_setAttributes();
-	m_bFullscreen = false;
+	m_bFullscreen = true;
 	m_width = m_screenWidth = m_resizeWidth;
 	m_height = m_screenHeight = m_resizeHeight;
 
-	_setBufferSize();
 	opengl::Utils::isGLError(); // reset GL error.
 
 	return true;

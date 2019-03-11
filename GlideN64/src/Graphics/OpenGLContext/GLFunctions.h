@@ -1,6 +1,8 @@
 #ifndef GLFUNCTIONS_H
 #define GLFUNCTIONS_H
 
+#include <glsm/glsmsym.h>
+
 #ifdef OS_WINDOWS
 #include <windows.h>
 #elif defined(OS_LINUX)
@@ -72,7 +74,6 @@ typedef double GLdouble;
 #define glLineWidth(...) CHECKED_GL_FUNCTION(g_glLineWidth, __VA_ARGS__)
 #define glClear(...) CHECKED_GL_FUNCTION(g_glClear, __VA_ARGS__)
 #define glGetFloatv(...) CHECKED_GL_FUNCTION(g_glGetFloatv, __VA_ARGS__)
-#define glDeleteTextures(...) CHECKED_GL_FUNCTION(g_glDeleteTextures, __VA_ARGS__)
 #define glGenTextures(...) CHECKED_GL_FUNCTION(g_glGenTextures, __VA_ARGS__)
 #define glTexParameterf(...) CHECKED_GL_FUNCTION(g_glTexParameterf, __VA_ARGS__)
 #define glActiveTexture(...) CHECKED_GL_FUNCTION(g_glActiveTexture, __VA_ARGS__)

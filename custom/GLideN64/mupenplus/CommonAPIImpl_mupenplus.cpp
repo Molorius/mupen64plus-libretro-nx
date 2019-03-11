@@ -16,6 +16,12 @@
 
 extern retro_environment_t environ_cb;
 
+void retroChangeWindow()
+{
+	dwnd().setToggleFullscreen();
+	dwnd().changeWindow();
+}
+
 extern unsigned int* rdram_size;
 int PluginAPI::InitiateGFX(const GFX_INFO & _gfxInfo)
 {
@@ -53,7 +59,7 @@ void _getWSPath(const char * _path, wchar_t * _strPath)
 }
 
 void getRetroArchDir(wchar_t * _strPath)
-{
+{ 
 	const char* systemDir = NULL;
 	if (!environ_cb(RETRO_ENVIRONMENT_GET_SYSTEM_DIRECTORY,&systemDir) || !systemDir || !*systemDir)
 		systemDir = "./";

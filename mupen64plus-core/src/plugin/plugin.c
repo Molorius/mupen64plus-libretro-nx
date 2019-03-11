@@ -48,9 +48,6 @@
 CONTROL Controls[4];
 /* global function pointers - initialized on core startup */
 
-void ResizeVideoOutput(int width, int height){
-
-}
 
 /* local data structures and functions */
 #define DEFINE_GFX(X) \

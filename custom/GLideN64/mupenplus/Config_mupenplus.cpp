@@ -106,7 +106,7 @@ void LoadCustomSettings(bool internal)
 	}
 }
 
-void Config_LoadConfig()
+extern "C" void Config_LoadConfig()
 {
 	u32 hacks = config.generalEmulation.hacks;
 	config.resetToDefaults();

@@ -915,7 +915,6 @@ bool retro_load_game(const struct retro_game_info *game)
     params.stencil               = false;
 
     params.framebuffer_lock      = context_framebuffer_lock;
-
     if (!glsm_ctl(GLSM_CTL_STATE_CONTEXT_INIT, &params))
     {
         if (log_cb)
