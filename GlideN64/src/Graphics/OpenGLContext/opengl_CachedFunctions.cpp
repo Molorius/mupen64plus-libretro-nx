@@ -152,9 +152,9 @@ void CachedTextureUnpackAlignment::setTextureUnpackAlignment(s32 _param)
 /*---------------CachedFunctions-------------*/
 
 CachedFunctions::CachedFunctions(const GLInfo & _glinfo)
-: m_bindFramebuffer(GET_GL_FUNCTION(glBindFramebuffer))
-, m_bindRenderbuffer(GET_GL_FUNCTION(glBindRenderbuffer))
-, m_bindBuffer(GET_GL_FUNCTION(glBindBuffer)) {
+: m_bindFramebuffer(glBindFramebuffer)
+, m_bindRenderbuffer(glBindRenderbuffer)
+, m_bindBuffer(glBindBuffer) {
 	if (_glinfo.isGLESX) {
 		// Disable parameters, not avalible for GLESX
 		m_enables.emplace(GL_DEPTH_CLAMP, Parameter());

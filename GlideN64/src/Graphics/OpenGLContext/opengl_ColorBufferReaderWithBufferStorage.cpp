@@ -59,7 +59,7 @@ const u8 * ColorBufferReaderWithBufferStorage::_readPixels(const ReadColorBuffer
 
 	if (!_params.sync) {
 		//Setup a fence sync object so that we know when glReadPixels completes
-		m_fence[m_curIndex] = glFenceSync(GL_SYNC_GPU_COMMANDS_COMPLETE, 0);
+		m_fence[m_curIndex] = (GLsync)glFenceSync(GL_SYNC_GPU_COMMANDS_COMPLETE, 0);
 		m_curIndex = (m_curIndex + 1) % m_numPBO;
 		//Wait for glReadPixels to complete for the currently selected PBO
 		if (m_fence[m_curIndex] != 0) {
